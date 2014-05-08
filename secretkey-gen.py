@@ -36,4 +36,5 @@ def write_to_environment(filename):
 
 if __name__ == '__main__':
     generate_secret_key(length,filename)
-    print_file(filename)
+    #print_file(filename)
+    #write_to_environment(filename)
