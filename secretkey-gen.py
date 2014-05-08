@@ -2,6 +2,7 @@
 Basic Secret Key Generator
 Stores in external file which can then be read an inserted into application.
 '''
+import os
 import random
 import sys
 
@@ -25,9 +26,14 @@ def generate_secret_key(length, filename):
 def print_file(filename):
     file = open(filename, 'r')
     print 'Your secret key is: '
-    print file.read()
+    print file.read().strip()
     file.close()
-    
+
+def write_to_environment(filename):
+    file = open(filename, 'r')
+    key = file.read().strip()
+    os.environ['SECRET_KEY'] = key
+
 if __name__ == '__main__':
     generate_secret_key(length,filename)
-    #print_file(filename)
+    print_file(filename)
