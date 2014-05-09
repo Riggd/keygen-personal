@@ -17,7 +17,7 @@ def generate_secret_key(length, filename):
         
     secret_key = ''
     for i in range(length):
-        secret_key += chr(random.randint(33,126))    
+        secret_key += chr(random.SystemRandom().randint(33,126))    
     
     file = open(filename, 'w')
     file.write(secret_key)
@@ -36,5 +36,5 @@ def write_to_environment(filename):
 
 if __name__ == '__main__':
     generate_secret_key(length,filename)
-    #print_file(filename)
+    print_file(filename)
     #write_to_environment(filename)
