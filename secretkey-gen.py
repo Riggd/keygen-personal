@@ -33,6 +33,7 @@ def write_to_environment(filename):
     file = open(filename, 'r')
     key = file.read().strip()
     os.environ['SECRET_KEY'] = key
+    file.close()
 
 if __name__ == '__main__':
     generate_secret_key(length,filename)
